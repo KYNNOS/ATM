@@ -19,5 +19,29 @@ public class ContaBancaria {
         this.Numero = Numero;
         this.Titular = Titular;
     }
+
+    public double getSaldo() {
+        return Saldo;
+    }
+
+    public void setSaldo(double Saldo) {
+        this.Saldo = Saldo;
+    }
+
+    public int getNumero() {
+        return Numero;
+    }
+
+    public void setNumero(int Numero) {
+        this.Numero = Numero;
+    }
+
+    public Pessoa getTitular() {
+        return Titular;
+    }
+
+    public void setTitular(Pessoa Titular) {
+        this.Titular = Titular;
+    }
     
 }

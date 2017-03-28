@@ -45,12 +45,12 @@ public class inserir extends javax.swing.JFrame {
         nome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         saldo = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButton1Inserir = new javax.swing.JButton();
+        jButton2Listar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         res = new javax.swing.JTextArea();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jButton3Limpar = new javax.swing.JButton();
+        jButton4Sair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,17 +60,17 @@ public class inserir extends javax.swing.JFrame {
 
         jLabel3.setText("Saldo da conta");
 
-        jButton1.setText("inserir");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton1Inserir.setText("inserir");
+        jButton1Inserir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                jButton1InserirMouseClicked(evt);
             }
         });
 
-        jButton2.setText("listar");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton2Listar.setText("listar");
+        jButton2Listar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                jButton2ListarMouseClicked(evt);
             }
         });
 
@@ -78,17 +78,17 @@ public class inserir extends javax.swing.JFrame {
         res.setRows(5);
         jScrollPane1.setViewportView(res);
 
-        jButton3.setText("limpar");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton3Limpar.setText("limpar");
+        jButton3Limpar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                jButton3LimparMouseClicked(evt);
             }
         });
 
-        jButton4.setText("sair");
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton4Sair.setText("sair");
+        jButton4Sair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
+                jButton4SairMouseClicked(evt);
             }
         });
 
@@ -108,12 +108,12 @@ public class inserir extends javax.swing.JFrame {
                     .addComponent(saldo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
+                    .addComponent(jButton1Inserir)
+                    .addComponent(jButton2Listar)
+                    .addComponent(jButton3Limpar)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jButton4)))
+                        .addComponent(jButton4Sair)))
                 .addGap(43, 43, 43))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -138,13 +138,13 @@ public class inserir extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(saldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(jButton1Inserir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(jButton2Listar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
+                        .addComponent(jButton3Limpar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)))
+                        .addComponent(jButton4Sair)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
                 .addContainerGap())
@@ -170,7 +170,7 @@ public class inserir extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void jButton1InserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1InserirMouseClicked
         // TODO add your handling code here:
         
         int opcao;
@@ -190,33 +190,33 @@ public class inserir extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_jButton1InserirMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void jButton2ListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2ListarMouseClicked
         // TODO add your handling code here:
         for (int i = 0; i < acb.size(); i++) {
             escrever("\n Numero de conta:" + acb.get(i).getNumero() + "\n Nome: " + acb.get(i).getTitular().getNome()+ "\n Saldo: " + acb.get(i).getSaldo()+"\n", false);
         }
         
         
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_jButton2ListarMouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void jButton3LimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3LimparMouseClicked
         // TODO add your handling code here:
         num.setText(null);
         nome.setText(null);
         saldo.setText(null);
         res.setText(null);
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_jButton3LimparMouseClicked
 
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+    private void jButton4SairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4SairMouseClicked
         // TODO add your handling code here:
          JFrame frame = new Menu();
          frame.setVisible(true);
         this.setVisible(false);
         
         
-    }//GEN-LAST:event_jButton4MouseClicked
+    }//GEN-LAST:event_jButton4SairMouseClicked
 
     /**
      * @param args the command line arguments
@@ -254,10 +254,10 @@ public class inserir extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton1Inserir;
+    private javax.swing.JButton jButton2Listar;
+    private javax.swing.JButton jButton3Limpar;
+    private javax.swing.JButton jButton4Sair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

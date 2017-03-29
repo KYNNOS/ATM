@@ -59,6 +59,7 @@ private int conta;
         res = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        Limpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,8 +76,18 @@ private int conta;
         jLabel6.setText("Quantia");
 
         Transferir.setText("Transferir");
+        Transferir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TransferirMouseClicked(evt);
+            }
+        });
 
         Depositar.setText("Depositar");
+        Depositar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DepositarMouseClicked(evt);
+            }
+        });
 
         Levantar.setText("Levantar");
         Levantar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -98,13 +109,22 @@ private int conta;
             }
         });
 
+        Limpar.setText("Limpar");
+        Limpar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LimparMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jButton4)
-                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4)
+                    .addComponent(Limpar))
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -116,7 +136,7 @@ private int conta;
                                 .addGap(23, 23, 23)
                                 .addComponent(jLabel6))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(valor2, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                                .addComponent(valor2, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
                                 .addComponent(Transferir))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -152,31 +172,33 @@ private int conta;
                         .addGap(23, 23, 23)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(nome)))
+                            .addComponent(nome))
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Levantar))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(valor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Depositar))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(valor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Transferir)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton4)))
-                .addGap(38, 38, 38)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Levantar))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(valor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Depositar))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(valor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Transferir))
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Limpar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
@@ -221,6 +243,47 @@ private int conta;
         
     }//GEN-LAST:event_LevantarMouseClicked
 
+    private void DepositarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DepositarMouseClicked
+        // TODO add your handling code here:
+       
+        acb.get(conta).setSaldo(acb.get(conta).getSaldo()+ Double.valueOf(valor1.getText()));
+        escrever("nome:" + acb.get(conta).getTitular().getNome()+"\nSaldo"+ acb.get(conta).getSaldo(),true);
+       
+        
+        
+    }//GEN-LAST:event_DepositarMouseClicked
+
+    private void TransferirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferirMouseClicked
+        // TODO add your handling code here:
+        int conta1;
+         for (int i = 0; i < acb.size(); i++) {
+            
+            if (acb.get(i).getNumero()==Integer.valueOf(numero.getText())) {
+                conta1 =i;
+                if (acb.get(conta).getSaldo()>= Double.valueOf(valor2.getText())){
+                acb.get(conta).setSaldo(acb.get(conta).getSaldo()-Double.valueOf(valor2.getText()));
+                acb.get(conta1).setSaldo(acb.get(conta1).getSaldo()+Double.valueOf(valor2.getText()));
+                  escrever("nome:" + acb.get(conta).getTitular().getNome()+"\nSaldo"+ acb.get(conta).getSaldo()+"\n"+"nome:" + acb.get(conta1).getTitular().getNome()+"\nSaldo"+ acb.get(conta1).getSaldo()+"\n",true);
+                  
+                }
+            }
+        }
+        
+        
+    }//GEN-LAST:event_TransferirMouseClicked
+
+    private void LimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LimparMouseClicked
+        // TODO add your handling code here:
+         numero.setText(null);
+        valor.setText(null);
+        valor1.setText(null);
+        valor2.setText(null);
+        res.setText(null);
+        
+        
+        
+    }//GEN-LAST:event_LimparMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -259,6 +322,7 @@ private int conta;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Depositar;
     private javax.swing.JButton Levantar;
+    private javax.swing.JButton Limpar;
     private javax.swing.JButton Transferir;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
